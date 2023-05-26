@@ -10,7 +10,7 @@ include "navbar.php"; ?>
     <div class="properties-container container">
         <!--Box 1-->
         <div class="box">
-            <img src="./static/images/img9.jpg">
+            <img src="./layout/images/img9.jpg">
             <h3>300 JD</h3>
             <div class="contant">
                 <div class="text">
@@ -46,7 +46,7 @@ include "navbar.php"; ?>
         </div>
         <!--Box 2-->
         <div class="box">
-            <img src="./static/images/img8.jpg">
+            <img src="./layout/images/img8.jpg">
             <h3>250 JD</h3>
             <div class="contant">
                 <div class="text">
@@ -65,7 +65,7 @@ include "navbar.php"; ?>
         </div>
         <!--Box 3-->
         <div class="box">
-            <img src="./static/images/img7.jpg">
+            <img src="./layout/images/img7.jpg">
             <h3>380 JD</h3>
             <div class="contant">
                 <div class="text">
@@ -84,7 +84,7 @@ include "navbar.php"; ?>
         </div>
         <!--Box 4-->
         <div class="box">
-            <img src="./static/images/img6.jpg">
+            <img src="./layout/images/img6.jpg">
             <h3>120 JD</h3>
             <div class="contant">
                 <div class="text">
@@ -103,7 +103,7 @@ include "navbar.php"; ?>
         </div>
         <!--Box 5-->
         <div class="box">
-            <img src="./static/images/img3.jpg">
+            <img src="./layout/images/img3.jpg">
             <h3>320 JD</h3>
             <div class="contant">
                 <div class="text">
@@ -122,7 +122,7 @@ include "navbar.php"; ?>
         </div>
         <!--Box 6-->
         <div class="box">
-            <img src="./static/images/img2.jpg">
+            <img src="./layout/images/img2.jpg">
             <h3>170 JD</h3>
             <div class="contant">
                 <div class="text">

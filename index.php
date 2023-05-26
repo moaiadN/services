@@ -11,7 +11,7 @@ include "navbar.php"; ?>
 <!--About-->
 <section class="about container" id="about">
     <!-- <div class="about-img">
-            <img src="./static/images/img4.jpg">
+            <img src="./layout/images/img4.jpg">
         </div> -->
     <div class="about-text">
         <h1 style="text-align: center;">About Uni-Services</h1>
@@ -37,7 +37,7 @@ include "navbar.php"; ?>
         <!--Box 1-->
         <a class="card-content" href="./card.php">
             <div class="box">
-                <img src="./static/images/img9.jpg">
+                <img src="./layout/images/img9.jpg">
                 <div class="contant">
                     <div class="text">
                         <h3>Apartments</h3>
@@ -48,7 +48,7 @@ include "navbar.php"; ?>
         <!--Box 2-->
         <a class="card-content" href="./card.php">
             <div class="box">
-                <img src="./static/images/img8.jpg">
+                <img src="./layout/images/img8.jpg">
                 <div class="contant">
                     <div class="text">
                         <h3>Study Places</h3>
@@ -59,7 +59,7 @@ include "navbar.php"; ?>
         <!--Box 3-->
         <a class="card-content" href="./card.php">
             <div class="box">
-                <img src="./static/images/img7.jpg">
+                <img src="./layout/images/img7.jpg">
                 <div class="contant">
                     <div class="text">
                         <h3>Libraries</h3>

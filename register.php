@@ -6,7 +6,7 @@ include "navbar.php";
 <section class="sign_up container">
     <h2>Welcome, join us now and become a member of our community</h2>
     <form method="POST" action="">
-        <?php include('./processes/errors.php'); ?>
+        <?php include('./processes/_errors.php'); ?>
         <div class="form-row">
             <div class="input-data">
                 <input type="text" placeholder="First  Name" name="fname" value="<?php echo $fname; ?>">
@@ -20,8 +20,7 @@ include "navbar.php";
                 <input type="email" placeholder="Email Address" name="email" value="<?php echo $email; ?>">
             </div>
             <div class="input-data">
-                <input type="text" placeholder="Phone Number" name="phone_number" max="10"
-                    value="<?php echo $phone_number; ?>">
+                <input type="text" placeholder="Phone Number" name="phone_number" max="10" value="<?php echo $phone_number; ?>">
             </div>
         </div>
         <div class="form-row">

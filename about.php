@@ -25,44 +25,44 @@ include "navbar.php"; ?>
 <section class="sales container" id="sales">
 
     <!-- <div class="box">
-        <img class="profile_Img" src="./static/images/osama.jpg">
+        <img class="profile_Img" src="./layout/images/osama.jpg">
         <h3>Osama Al-Zubaidi</h3>
     </div>
     <div class="box">
-        <img class="profile_Img" src="./static/images/Ghaith.jpg">
+        <img class="profile_Img" src="./layout/images/Ghaith.jpg">
         <h3>Ghaith Khdier</h3>
     </div>
     <div class="box">
-        <img class="profile_Img" src="./static/images/Abdallah.jpg">
+        <img class="profile_Img" src="./layout/images/Abdallah.jpg">
         <h3>Abdallah AL-Raba’i</h3>
     </div>
     <div class="box">
-        <img class="profile_Img" src="./static/images/Istbrak.jpg">
+        <img class="profile_Img" src="./layout/images/Istbrak.jpg">
         <h3>Istbrak khadrawe</h3>
     </div> -->
 
     <!-- =====================================-->
 
     <div class="card box" style="width: 18rem;height: 400px;">
-        <img src="./static/images/osama.jpg" class="card-img-top profile_Img" alt="Osama Al-Zubaidi">
+        <img src="./layout/images/osama.jpg" class="card-img-top profile_Img" alt="Osama Al-Zubaidi">
         <div class="card-body">
             <h6 class="card-title">Osama Al-Zubaidi</h6>
         </div>
     </div>
     <div class="card box" style="width: 18rem;height: 400px;">
-        <img src="./static/images/Ghaith.jpg" class="card-img-top profile_Img" alt="Ghaith Khdier">
+        <img src="./layout/images/Ghaith.jpg" class="card-img-top profile_Img" alt="Ghaith Khdier">
         <div class="card-body">
             <h6 class="card-title">Ghaith Khdier</h6>
         </div>
     </div>
     <div class="card box" style="width: 18rem;height: 400px;">
-        <img src="./static/images/Abdallah.jpg" class="card-img-top profile_Img" alt="Abdallah AL-Raba’i">
+        <img src="./layout/images/Abdallah.jpg" class="card-img-top profile_Img" alt="Abdallah AL-Raba’i">
         <div class="card-body">
             <h6 class="card-title">Abdallah AL-Raba’i</h6>
         </div>
     </div>
     <div class="card box" style="width: 18rem;height: 400px;">
-        <img src="./static/images/Istbrak.jpg" class="card-img-top profile_Img" alt="Istbrak khadrawe">
+        <img src="./layout/images/Istbrak.jpg" class="card-img-top profile_Img" alt="Istbrak khadrawe">
         <div class="card-body">
             <h6 class="card-title">Istbrak khadrawe</h6>
         </div>
