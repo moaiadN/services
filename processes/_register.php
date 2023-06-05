@@ -3,10 +3,7 @@ include 'connection.php';
 session_start();
 
 // initializing variables
-$fname = "";
-$lname = "";
-$email = "";
-$phone_number = "";
+$fname = $lname = $email = $phone_number = "";
 $errors = array();
 
 // REGISTER USER
@@ -49,12 +46,12 @@ if (isset($_POST['SIGNUP'])) {
 
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
-        $password = md5($password_1); //encrypt the password before saving in the database
+        $password = md5($pass1); //encrypt the password before saving in the database
 
         $query = mysqli_query($conn, "INSERT INTO register (fname, lname, email, phone_number, password) 
   			  VALUES('$fname','$lname', '$email', '$phone_number', '$password')");
 
-        $_SESSION['email'] = $email;
+        $_SESSION['user'] = $email;
         //====> 
         $_SESSION['success'] = "You are now logged in";
         //<====
