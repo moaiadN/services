@@ -7,7 +7,7 @@ include "navbar.php"; ?>
     <section class="sign_up container">
         <h2>Welcome Back</h2>
         <form action="" method="POST">
-            <?php include('./processes/errors.php'); ?>
+            <?php include('./processes/_errors.php'); ?>
             <div class="form-row">
                 <div class="input-data">
                     <input type="email" placeholder="Email Address" name="email" value="<?php echo $email ?>">
@@ -19,9 +19,9 @@ include "navbar.php"; ?>
                 </div>
             </div>
             <div class="form-row">
-                <div class="input-data">
+                <div class="input-data d-flex justify-content-between">
                     <p> Don't have an account! <a href="./register.php">Signup</a></p>
-                    <a href="#">Forget Password ?</a>
+                    <a href="forgetPass.php" class="text-decoration-none">Forget Password?</a>
                 </div>
             </div>
             <div class="form-row" class="submit-button">
@@ -33,4 +33,6 @@ include "navbar.php"; ?>
             </div>
         </form>
     </section>
+    <!-- =================================== -->
+
     <?php include "footer.php"; ?>
