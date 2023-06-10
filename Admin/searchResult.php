@@ -23,21 +23,20 @@ include "sidebar.php";
         <tbody>
             <?php
             if (isset($_POST["searchBtn"])) {
-                $unfound = '';
+                $unfounded = '';
                 $search = $_POST['search'];
                 $rows = mysqli_query($conn, "SELECT * FROM user_services WHERE title LIKE'%$search%' ORDER BY id ASC");
-                if ($search == "") {
-                    // return   header('location: services.php');
+                if (empty($search)) {
+                    $unfounded =
+                        " <div class='text-center'> <h1 class='' style='color: #dbdada;'>Write Anything to Search</h1></div>";
             ?>
-                    <script>
-                        location.href = 'services.php';
-                    </script>
+                    <!-- <script> location.href = 'services.php';  </script> -->
                     <?php
                 } else {
                     $sr = 1;
                     foreach ($rows as $row) :
                         if ($search !== $row['title']) {
-                            $unfound =
+                            $unfounded =
                                 " <div class='text-center'> <h1 class='' style='color: #dbdada;'>No Results Found....</h1></div>";
                         } else {
                     ?>
@@ -57,7 +56,7 @@ include "sidebar.php";
                                 <td><?php echo $row['phone_number']; ?></td>
                                 <?php if ($_SESSION['user']['user_type'] === 'admin') { ?>
                                     <td>
-                                        <?php if ($row['status'] === 'done') { ?>
+                                        <?php if ($row['status'] === 'in_service') { ?>
                                             <form action="../processes/_remove.php" method="POST" class="ms-3">
                                                 <button name="deleteService" class="btn btn-danger mb-2 ms-2">Delete</button>
                                                 <input type="hidden" name="deleteServiceId" value="<?php echo $row['id']; ?>">
@@ -83,9 +82,9 @@ include "sidebar.php";
         </tbody>
     </table>
     <!-- </div> -->
-    <?php echo $unfound; ?>
+    <?php echo $unfounded; ?>
 </section>
 
 
 
-<?php include_once 'footer.php' ?>
+<?php include_once 'footer.php'; ?>

@@ -274,3 +274,41 @@ body.dark .switch::before {
   top: 60px;
   z-index: 1111111;
 }
+/* ======= image Overlay */
+.popup-image {
+  position: fixed;
+  top: 0;
+  left: 30%;
+  background: rgba(0, 0, 0, 0.9);
+  height: 50%;
+  width: 41%;
+  z-index: 100;
+  display: none;
+}
+
+.popup-image span {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  font-size: 45px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  width: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .popup-image img {
+    width: 90%;
+  }
+}

@@ -41,27 +41,48 @@ include "sidebar.php";
                 <td><?php echo $row['phone_number']; ?></td>
                 <?php if ($_SESSION['user']['user_type'] === 'admin') { ?>
                 <td>
-                    <?php if ($row['status'] === 'done') { ?>
+                    <?php
+                            echo $row['status'];
+                            if ($row['status'] === 'in_service' || $row['status'] === 'out_of_service') { ?>
                     <form action="../processes/_remove.php" method="POST" class="ms-3">
                         <button name="deleteService" class="btn btn-danger mb-2 ms-2">Delete</button>
                         <input type="hidden" name="deleteServiceId" value="<?php echo $row['id']; ?>">
                         <input type="hidden" name="serviceImage" value="<?php echo $row['image']; ?>">
                     </form>
                     <?php } else { ?>
-                    <form action="../processes/_remove.php" method="POST" class="ms-3">
-                        <button name="deleteService" class="btn btn-danger mb-2 ms-2">Reject</button>
-                        <input type="hidden" name="deleteServiceId" value="<?php echo $row['id']; ?>">
-                        <input type="hidden" name="serviceImage" value="<?php echo $row['image']; ?>">
-                    </form>
-                    <a href="../processes/_serviceStatus.php?id=<?php echo $row['id']; ?>" name="serviceStatus"
-                        class="btn btn-info">Approve</a>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <form action="../processes/_remove.php" method="POST" class="ms-1">
+                            <button name="deleteService" class="btn btn-danger">Reject</button>
+                            <input type="hidden" name="deleteServiceId" value="<?php echo $row['id']; ?>">
+                            <input type="hidden" name="serviceImage" value="<?php echo $row['image']; ?>">
+                        </form>
+                        <form action="../processes/_serviceStatus.php" method="POST" class="ms-1">
+                            <button name="activeService" class="btn btn-primary">Approval</button>
+                            <input type="hidden" name="activeServiceId" value="<?php echo $row['id']; ?>">
+                        </form>
+                    </div>
                     <?php } ?>
                 </td>
                 <?php } else { ?>
-                <td><?php echo $row['status']; ?></td>
+                <td>
+                    <?php
+                            echo $row['status'];
+                            if ($row['status'] === 'in_service') {
+                            ?>
+                    <form action="../processes/_serviceStatus.php" method="POST" class="ms-1">
+                        <button name="outOfService" class="btn btn-warning">Out Of Service</button>
+                        <input type="hidden" name="outOfServiceId" value="<?php echo $row['id']; ?>">
+                    </form>
+                    <?php } else if ($row['status'] === 'out_of_service') { ?>
+                    <form action="../processes/_serviceStatus.php" method="POST" class="ms-1">
+                        <button name="inService" class="btn btn-warning">Back To Service</button>
+                        <input type="hidden" name="inServiceId" value="<?php echo $row['id']; ?>">
+                    </form>
+                </td>
             </tr>
             <?php }
-                endforeach; ?>
+                        }
+                    endforeach; ?>
         </tbody>
     </table>
     <!-- </div> -->

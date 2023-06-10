@@ -53,13 +53,24 @@ if (isset($_POST['submit'])) {
 }
 
 
+// ======================================================================>>>>>
 
 if (isset($_POST['changeUserType'])) {
-    // $id = $_GET['id'];
     $id = $_POST['id'];
     $typeUser = $_POST['typeUser'];
     $query = mysqli_query($conn, "UPDATE register SET user_type = '$typeUser' WHERE id = '$id'");
     ?>
+    <script>
+        location.href = 'users.php';
+    </script>
+<?php
+}
+
+// ======================================================================>>>>>
+if (isset($_POST['changeType'])) {
+    $id = $_POST['id'];
+    $query = mysqli_query($conn, "UPDATE register SET user_type = 's_provider' WHERE id = '$id'");
+?>
     <script>
         location.href = 'users.php';
     </script>

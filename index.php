@@ -39,18 +39,18 @@ include "./processes/_visitorsMsg.php";
         <?php
         $rows = mysqli_query($conn, "SELECT * FROM categories");
         foreach ($rows as $row) : ?>
-        <!--Box 1-->
-        <!-- <a class="card-content" href="./card.php"> -->
-        <a href="./card.php?id=<?php echo $row['id'] ?>">
-            <div class="box">
-                <img src="./layout/images/<?php echo $row['cat_img']; ?>">
-                <div class="contant">
-                    <div class="text">
-                        <h3><?php echo $row['cat_name']; ?></h3>
+            <!--Box 1-->
+            <!-- <a class="card-content" href="./card.php"> -->
+            <a href="./card.php?id=<?php echo $row['id'] ?>">
+                <div class="box">
+                    <img src="./layout/images/<?php echo $row['cat_img']; ?>">
+                    <div class="contant">
+                        <div class="text">
+                            <h3><?php echo $row['cat_name']; ?></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
         <?php endforeach ?>
     </div>
 </section>
@@ -91,20 +91,18 @@ include "./processes/_visitorsMsg.php";
                 <input type="text" placeholder="Mail Subject" name="subject" value="<?php echo $subject ?>">
             </div>
             <div class="input-data">
-                <input type="text" placeholder="Enter Your Phone Number" name="phone_number"
-                    value="<?php echo $phone_number ?>">
+                <input type="text" placeholder="Enter Your Phone Number" name="phone_number" value="<?php echo $phone_number ?>">
             </div>
         </div>
         <div class="form-row textarea">
             <div class="input-data">
-                <textarea id="textarea" cols="37" rows="3" placeholder="Write Your Question Here" name="message"
-                    value="<?php echo $message ?>"></textarea>
+                <textarea id="textarea" cols="37" rows="3" placeholder="Write Your Question Here" name="message" value="<?php echo $message ?>"></textarea>
             </div>
         </div>
         <div class="form-row submit-btn">
             <div class="input-data">
                 <div class="inner"></div>
-                <button class="btn-style" type="submit" name="visitorsMsg">Submit</button>
+                <button class="btn-style" name="visitorsMsg">Submit</button>
             </div>
         </div>
     </form>

@@ -1,6 +1,7 @@
 <?php
 include "../processes/_login.php";
 
+$errors = array();
 if (!$_SESSION['user']) {
     $_SESSION['msg'] = "You must log in first";
     header('location: ../login.php');

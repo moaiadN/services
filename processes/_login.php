@@ -27,6 +27,8 @@ if (isset($_POST['LOGIN'])) {
                 $_SESSION['user'] = $logged_in_user;
                 // $_SESSION['success']  = "You are now logged in";
                 header('location: index.php');
+            } else if ($logged_in_user['user_type'] == 'pending') {
+                array_push($errors, "Sorry, Please You have to wait an Admin Approval");
             } else {
                 $_SESSION['user'] = $logged_in_user;
                 // $_SESSION['success']  = "You are now logged in";

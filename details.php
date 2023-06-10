@@ -33,7 +33,6 @@ if (!$_SESSION['user']) {
         $rows = mysqli_query($conn, "SELECT * FROM user_services WHERE id = '$id' ");
         if (mysqli_num_rows($rows) > 0) {
             $row = mysqli_fetch_assoc($rows);
-
         ?>
             <div class="mb-3 icon_link arrowBack">
                 <nav aria-label="breadcrumb">
@@ -49,30 +48,42 @@ if (!$_SESSION['user']) {
             <div>
                 <img style="width:500px" src="./layout/images/<?php echo $row['image'] ?>">
             </div>
-            <div class="details-text">
-                <div class="">
+            <div class="details-text m-0">
+                <div class="ms-5">
                     <h2><?php echo $row['title'] ?></h2>
                     <h6><?php echo $row['categories'] ?> | <small><i><?php echo $row['city'] ?></small></i></h6>
                     <p><?php echo $row['price'] ?>JD</p>
                     <p><?php echo $row['details'] ?></p>
                 </div>
 
-                <div class="display-images">
+                <div class="display-images flex-wrap ms-3 w-100">
                     <?php
-                    $adImgs = mysqli_query($conn, "SELECT * FROM added_imgs WHERE title ='" . $row['title'] . "'");
-                    foreach ($adImgs as $adImg) {
-                    ?>
-                    <img class="details-img" src="./layout/images/<?php echo $adImg['imgName'] ?>">
+                    $imgs = mysqli_query($conn, "SELECT * FROM added_imgs WHERE title ='" . $row['title'] . "'");
+                    foreach ($imgs as $img) { ?>
+                    <img class="details-img" src="./layout/images/<?php echo $img['imgName'] ?>">
                     <?php } ?>
                 </div>
 
-                <div class="details-btn">
+                <div class="details-btn ms-4">
+                    <?php
+                    $stat = mysqli_query($conn, "SELECT * FROM requests WHERE serviceId = $id AND email ='" . $_SESSION['user']['email'] . "'");
+                    if ($stat) {
+                        if (mysqli_num_rows($stat) > 0) { ?>
+                    <h3 class="text-warning border border-2 border-info rounded bg-dark fw-bold text-center ms-3">
+                        Service has
+                        been
+                        Booked
+                    </h3>
+                    <?php } else { ?>
                     <a href="./processes/_requests.php?id=<?php echo $row['id'] ?>" class="btn" id="liveAlertBtn">Book
                         Now</a>
+
+                    <?php }
+                        // }
+                    } ?>
                 </div>
             </div>
         </div>
-
 
 
         <?php }
