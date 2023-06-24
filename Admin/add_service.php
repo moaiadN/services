@@ -1,6 +1,7 @@
   <?php
+    include_once 'sidebar.php';
     include '../processes/_addService.php';
-    include_once 'sidebar.php' ?>
+    ?>
 
   <div class="container mb-3">
       <form method="POST" class="col-6 m-auto needs-validation" enctype="multipart/form-data" novalidate>
@@ -49,7 +50,7 @@
           </div>
           <hr>
           <!-- -============================{Contact Info}===================== -->
-          <h5 class="modal-title" id="exampleModalLabel">Contact Info</h5>
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Contact Info</h5>
           <?php $rows = mysqli_query($conn, "SELECT * FROM register WHERE email ='" . $_SESSION['user']['email'] . "' LIMIT 1");
             $result = mysqli_fetch_assoc($rows);
             ?>
@@ -68,7 +69,7 @@
           <div class="mb-2">
               <label for="phoneNumber" class="form-label">Phone Number</label>
               <input type="text" class="form-control" id="phoneNumber" placeholder="" name="phone_number" value="<?php echo $result['phone_number'] ?>" required>
-          </div>
+          </div> -->
           <div class="col-12">
               <button type="submit" class="btn btn-primary form-control mb-3" name="submit">Save</button>
           </div>
