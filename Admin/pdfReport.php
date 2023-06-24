@@ -33,7 +33,7 @@ class PDF extends FPDF
     }
 }
 
-// Instanciation of inherited class
+// Instantiation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
@@ -45,11 +45,9 @@ $pdf->SetFillColor(215, 244, 247);
 $pdf->SetDrawColor(3, 161, 255);
 $fill = false;
 foreach ($rows as $row) {
-    if ($row['user_type'] == 'pending') {
-        $pdf->SetTextColor(255, 0, 0);
-    } else {
-        $pdf->SetTextColor(0, 0, 0);
-    }
+
+    $row['user_type'] == 'pending' ? $pdf->SetTextColor(255, 0, 0) : $pdf->SetTextColor(0, 0, 0);
+
     $pdf->Cell(10, 10, $sr++, '1', 0, 'C', $fill);
     $pdf->Cell(36, 10, $row['fname'], '1', 0, 'C', $fill);
     $pdf->Cell(36, 10, $row['lname'], '1', 0, 'C', $fill);

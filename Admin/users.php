@@ -27,27 +27,28 @@ include '../processes/_addUser.php'
                     foreach ($rows as $row) :
                         if ($row['user_type'] !== 'admin' && $row['user_type'] !== 'pending') {
                     ?>
-                    <tr>
-                        <td><?php echo $sr++ ?></td>
-                        <td><?php echo $row['fname'] . ' ' . $row['lname']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['phone_number']; ?></td>
-                        <td><?php echo $row['user_type'] ?></td>
-                        <td>
-                            <form action="../processes/_remove.php" method="POST" class="ms-3">
-                                <button name="deleteUser" class="btn btn-danger mb-2 ms-2">Delete</button>
-                                <input type="hidden" name="deleteUserId" value="<?php echo $row['id']; ?>">
-                            </form>
-                        </td>
-                    </tr>
-                    <?php  } ?>
+                            <tr>
+                                <td><?php echo $sr++ ?></td>
+                                <td><?php echo $row['fname'] . ' ' . $row['lname']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['phone_number']; ?></td>
+                                <td><?php echo $row['user_type'] ?></td>
+                                <td>
+                                    <form action="../processes/_remove.php" method="POST" class="ms-3">
+                                        <button name="deleteUser" class="btn btn-danger mb-2 ms-2">Delete</button>
+                                        <input type="hidden" name="deleteUserId" value="<?php echo $row['id']; ?>">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php  } ?>
 
                     <?php endforeach; ?>
                 </tbody>
             </table>
             <hr class="border border-secondary border-2 opacity-75">
         </div>
-        <!-- ======================================================================================= -->
+
+        <!-- ===================={ Service Provider Requests }=============================== -->
         <div class="text">
             <h4>Service Provider Requests</h4>
             <table class="table table-striped text-center">
@@ -70,31 +71,30 @@ include '../processes/_addUser.php'
                     foreach ($rows as $row) :
                         if ($row['user_type'] !== 'admin' && $row['user_type'] == 'pending') {
                     ?>
-                    <tr>
-                        <td><?php echo $sr++ ?></td>
-                        <td id="image"><img style="width:100px;height:100px"
-                                src="../layout/images/<?php echo $row['image']; ?>">
-                        </td>
-                        <td><?php echo $row['id_number']; ?></td>
-                        <td><?php echo $row['fname'] . ' ' . $row['lname']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['phone_number']; ?></td>
-                        <td>
-                            <form action="" method="post">
-                                <?php if ($row['user_type'] == 'pending') {
+                            <tr>
+                                <td><?php echo $sr++ ?></td>
+                                <td id="image"><img style="width:100px;height:100px" src="../layout/images/<?php echo $row['image']; ?>">
+                                </td>
+                                <td><?php echo $row['id_number']; ?></td>
+                                <td><?php echo $row['fname'] . ' ' . $row['lname']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['phone_number']; ?></td>
+                                <td>
+                                    <form action="" method="post">
+                                        <?php if ($row['user_type'] == 'pending') {
                                         ?>
-                                <input type="hidden" name="id" value="<?php echo $row['registerId']; ?>">
-                                <button type="submit" class="btn btn-info mb-2 ms-2" name="changeType">Approve</button>
-                                <?php } ?>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="../processes/_remove.php" method="POST" class="ms-3">
-                                <button name="deleteUser" class="btn btn-danger mb-2 ms-2">Delete</button>
-                                <input type="hidden" name="deleteUserId" value="<?php echo $row['registerId']; ?>">
-                            </form>
-                        </td>
-                    </tr>
+                                            <input type="hidden" name="id" value="<?php echo $row['registerId']; ?>">
+                                            <button type="submit" class="btn btn-info mb-2 ms-2" name="changeType">Approve</button>
+                                        <?php } ?>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="../processes/_remove.php" method="POST" class="ms-3">
+                                        <button name="deleteUser" class="btn btn-danger mb-2 ms-2">Delete</button>
+                                        <input type="hidden" name="deleteUserId" value="<?php echo $row['registerId']; ?>">
+                                    </form>
+                                </td>
+                            </tr>
                     <?php }
                     endforeach; ?>
                 </tbody>
@@ -102,7 +102,6 @@ include '../processes/_addUser.php'
         </div>
     </div>
 </section>
-
 <!-- Modal -->
 <div class="popup-image">
     <span>&times;</span>

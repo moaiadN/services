@@ -73,8 +73,8 @@ section {
   background-position: center;
   height: 440px;
   border-radius: 1.5rem;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .home-text {

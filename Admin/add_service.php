@@ -48,23 +48,26 @@
               <input type="hidden" id="cat_name" name="cat_name">
           </div>
           <hr>
+          <!-- -============================{Contact Info}===================== -->
           <h5 class="modal-title" id="exampleModalLabel">Contact Info</h5>
-
+          <?php $rows = mysqli_query($conn, "SELECT * FROM register WHERE email ='" . $_SESSION['user']['email'] . "' LIMIT 1");
+            $result = mysqli_fetch_assoc($rows);
+            ?>
           <div class="b-2">
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="fname" required>
+              <input type="text" class="form-control" id="firstName" name="fname" value="<?php echo $result['fname'] ?>" required>
           </div>
           <div class="b-2">
               <label for="secondName" class="form-label">Second Name</label>
-              <input type="text" class="form-control" id="secondName" name="lname" required>
+              <input type="text" class="form-control" id="secondName" name="lname" value="<?php echo $result['lname'] ?>" required>
           </div>
           <div class="mb-2">
               <label for="email" class="form-label">email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control" id="email" name="email" value="<?php echo $result['email'] ?>" readonly>
           </div>
           <div class="mb-2">
               <label for="phoneNumber" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" id="phoneNumber" placeholder="" name="phone_number" required>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="" name="phone_number" value="<?php echo $result['phone_number'] ?>" required>
           </div>
           <div class="col-12">
               <button type="submit" class="btn btn-primary form-control mb-3" name="submit">Save</button>
