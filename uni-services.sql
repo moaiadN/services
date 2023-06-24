@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 08:25 PM
+-- Generation Time: Jun 24, 2023 at 07:32 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,7 +47,19 @@ INSERT INTO `added_imgs` (`id`, `imgName`, `title`, `servId`) VALUES
 (190, '1686134812img5.jpg', 'rooms', 141),
 (194, '1686134812img3.jpg', 'matabikh', 142),
 (195, '1686134812img4.jpg', 'matabikh', 142),
-(196, '1686134812img5.jpg', 'matabikh', 142);
+(196, '1686134812img5.jpg', 'matabikh', 142),
+(197, '1687607268img15.jpg', 'test', 143),
+(198, '1687607268img16.jpg', 'test', 143),
+(199, '1687607268img17.jpg', 'test', 143),
+(210, '1687623540sc (2).png', 'Test 3', 146),
+(211, '1687623540sc (3).png', 'Test 3', 146),
+(212, '1687623540sc (4).png', 'Test 3', 146),
+(213, '1687623608sc (2).png', 'Test 3', 146),
+(214, '1687623608sc (3).png', 'Test 3', 146),
+(215, '1687623608sc (4).png', 'Test 3', 146),
+(216, '1687623622sc (2).png', 'Test 3', 146),
+(217, '1687623622sc (3).png', 'Test 3', 146),
+(218, '1687623622sc (4).png', 'Test 3', 146);
 
 -- --------------------------------------------------------
 
@@ -111,8 +123,9 @@ CREATE TABLE `providerid` (
 
 INSERT INTO `providerid` (`id`, `image`, `id_number`, `registerId`) VALUES
 (5, 'sc (2).png', 2147483647, 31),
-(6, 'sc (7).png', 2147483647, 47),
-(7, 'sc (2).png', 2147483647, 48);
+(7, 'sc (2).png', 2147483647, 48),
+(11, 'sc (13).png', 2147483647, 99),
+(12, 'sc (5).png', 2147483647, 100);
 
 -- --------------------------------------------------------
 
@@ -141,8 +154,9 @@ INSERT INTO `register` (`id`, `fname`, `lname`, `email`, `phone_number`, `passwo
 (26, 'ali', 'Ali', 'a@a.a', '0798765432', 'e10adc3949ba59abbe56e057f20f883e', 'user'),
 (30, 'Adnan', 'Mars', 'adnan@adnan.com', '7896541230', '4297f44b13955235245b2497399d7a93', 'user'),
 (31, 'Waled', 'Mohammad', 'so@so.so', '0789465131', '4297f44b13955235245b2497399d7a93', 's_provider'),
-(47, 'Taha', 'Ramiz', 'so@so2.so', '0789465131', '4297f44b13955235245b2497399d7a93', 'pending'),
-(48, 'Samaan', 'salili', 'so@so3.so', '0789465131', '4297f44b13955235245b2497399d7a93', 'pending');
+(48, 'Samaan', 'salili', 'so@so3.so', '0789465131', '4297f44b13955235245b2497399d7a93', 'pending'),
+(99, 'malak', 'smaan', 'as@as.as', '0798765432', 'e10adc3949ba59abbe56e057f20f883e', 's_provider'),
+(100, 'ghaith', 'Ghanem', 'gg@gg.com', '1234567902', 'e10adc3949ba59abbe56e057f20f883e', 's_provider');
 
 -- --------------------------------------------------------
 
@@ -160,6 +174,13 @@ CREATE TABLE `requests` (
   `servicePrice` int(20) NOT NULL,
   `serviceId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`id`, `userName`, `email`, `phone`, `serviceCat`, `serviceTitle`, `servicePrice`, `serviceId`) VALUES
+(52, 'ali ali', 'a@a.a', 798765432, 'Apartments', 'books', 122, 140);
 
 -- --------------------------------------------------------
 
@@ -190,9 +211,13 @@ CREATE TABLE `user_services` (
 --
 
 INSERT INTO `user_services` (`id`, `image`, `price`, `title`, `details`, `number_of_beds`, `number_of_bathrooms`, `city`, `categories`, `fname`, `lname`, `email`, `phone_number`, `cat_id`, `status`) VALUES
-(140, '1686134812-img1.jpg', '122', 'books', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1, 1, 'irbid', 'Apartments', 'وليد', 'محمد', 'a@a.a', '0789465131', 1, 'in_service'),
-(141, '1686325812-img1.jpg', '111', 'rooms', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1, 1, 'irbid', 'Apartments', 'وليد', 'محمد', 'a@a.a', '0789465131', 1, 'in_service'),
-(142, '1686325812img4.jpg', '222', 'matabikh', 'fgh tjrtyj ryuryujryu rtyjru jryu', 1, 1, 'irbid', 'Apartments', 'وليد', 'محمد', 'a@a.a', '0789465131', 1, 'in_service');
+(140, '1686134812-img1.jpg', '122', 'books', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1, 1, 'irbid', 'Apartments', 'Sara', 'batineh', 'sara@sara.com', '0789465131', 1, 'in_service'),
+(141, '1686325812-img1.jpg', '111', 'rooms', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1, 1, 'irbid', 'Apartments', 'malak', 'samaan', 'as@as.as', '0789465131', 1, 'in_service'),
+(142, '1686325812img4.jpg', '222', 'matabikh', 'fgh tjrtyj ryuryujryu rtyjru jryu', 1, 1, 'irbid', 'Apartments', 'Waled', 'Mohammad', 'so@so.so', '0789465131', 1, 'out_of_service'),
+(143, '1687607268-img14.jpg', '333', 'test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea', 3, 2, 'amman', 'Libraries', 'sara', 'batineh', 'sara@sara.com', '0797777777', 3, 'in_service'),
+(146, '1687623540-sc (1).png', '456', 'Test 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud', 3, 4, 'Jarash', 'Study Places', '', '', '', '', 2, 'pending'),
+(147, '1687623608-sc (1).png', '456', 'Test 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud', 3, 4, 'Jarash', 'Study Places', '', '', '', '', 2, 'pending'),
+(148, '1687623622-sc (1).png', '456', 'Test 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud', 3, 4, 'Jarash', 'Study Places', '', '', '', '', 2, 'pending');
 
 --
 -- Indexes for dumped tables
@@ -252,7 +277,7 @@ ALTER TABLE `user_services`
 -- AUTO_INCREMENT for table `added_imgs`
 --
 ALTER TABLE `added_imgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -270,25 +295,25 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `providerid`
 --
 ALTER TABLE `providerid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `user_services`
 --
 ALTER TABLE `user_services`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- Constraints for dumped tables

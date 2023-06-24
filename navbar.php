@@ -36,6 +36,9 @@
                 </ul>
                 <?php
                 if (isset($_SESSION['user'])) { ?>
+                     <div class="me-5">
+                        <h5 class="fw-bold"> Welcome <span class="bg-warning p-2 text-light rounded text-uppercase"><?php echo $_SESSION['user']['fname']; ?></span></h5>
+                    </div>
                     <a href="logout.php"><button class="btn">Logout</button></a>
                 <?php } else { ?>
                     <a href="./login.php"><button class="btn">Login</button></a>

@@ -18,7 +18,6 @@ if (!$_SESSION['user']) {
 </head>
 
 <body>
-
     <nav class=" sidebar close">
         <header>
             <div class="image-text">
