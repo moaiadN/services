@@ -13,15 +13,12 @@ if (isset($_POST['submit'])) {
     $categories = $_POST['categories'];
     $cat_name = $_POST['cat_name'];
 
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['phone_number'];
 
-    // ==============================
-    $stat = mysqli_query($conn, "SELECT * FROM register WHERE email = '" . $_SESSION['user']['email'] . "'");
-    $resStat = mysqli_fetch_assoc($stat);
-    $fname = $resStat['fname'];
-    $lname = $resStat['lname'];
-    $email = $resStat['email'];
-    $phone_number = $resStat['phone_number'];
-    // ===========================> IMAGE UPLOAD ====>
+    // ===========================> IMAGE UPLOAD ===========>
     $extension = array('jpeg', 'jpg', 'png', 'gif');
 
     $image_name  = $_FILES['image']['name'];
