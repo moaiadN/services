@@ -43,7 +43,7 @@ include "sidebar.php";
                     <td><?php echo $row['number_of_bathrooms']; ?></td>
                     <td><?php echo $row['city']; ?></td>
                     <td><?php echo $row['categories']; ?></td>
-                    <td><?php echo $row['fname']; ?></td>
+                    <td><?php echo $row['phone_number']; ?></td>
                     <?php if ($_SESSION['user']['user_type'] === 'admin') { ?>
                         <td>
                             <?php
